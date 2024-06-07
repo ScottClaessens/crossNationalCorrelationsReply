@@ -1,0 +1,221 @@
+---
+title             : "Reply to: Controlling for non-independence of nations should NOT be the default choice in cross-cultural research"
+shorttitle        : "Non-independence reply"
+
+author: 
+  - name          : "Scott Claessens"
+    affiliation   : "1*"
+  - name          : "Thanos Kyritsis"
+    affiliation   : "1"
+  - name          : "Quentin D. Atkinson"
+    affiliation   : "1,2*"
+
+affiliation:
+  - id            : "1"
+    institution   : "\\footnotesize School of Psychology, University of Auckland, Auckland, New Zealand"
+  - id            : "2"
+    institution   : "\\footnotesize School of Anthropology and Museum Ethnography, University of Oxford, Oxford, United Kingdom \\newline *email: scott.claessens@gmail.com; q.atkinson@auckland.ac.nz"
+
+bibliography      : ["r-references.bib"]
+floatsintext      : yes
+figurelist        : no
+figsintext        : yes
+tablelist         : no
+footnotelist      : no
+linenumbers       : yes
+mask              : no
+draft             : no
+numbersections    : false
+documentclass     : "apa6"
+classoption       : "man, donotrepeattitle"
+output            : papaja::apa6_pdf
+header-includes: 
+  - \raggedbottom
+  - \usepackage{setspace}
+  - \AtBeginEnvironment{tabular}{\singlespacing}
+  - \AtBeginEnvironment{lltable}{\singlespacing}
+  - \AtBeginEnvironment{tablenotes}{\doublespacing}
+  - \captionsetup[table]{font={stretch=1.5}}
+  - \captionsetup[figure]{font={stretch=1,small}}
+  - \nolinenumbers
+csl               : nature.csl
+---
+ 
+\linenumbers
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(warning = FALSE, message = FALSE, echo = FALSE)
+```
+
+It is widely acknowledged that failing to account for non-independence in data 
+can bias statistical estimates and that national-level data often exhibit such 
+non-independence. In our recent paper[@Claessens2023], we show that, despite 
+this awareness, most analyses of cross-national variation in psychological 
+values or economic indicators do not make any attempt to control for 
+non-independence, and for those that do, most methods deployed do little to
+reduce bias in simulated datasets with non-independence due to proximity or
+shared cultural ancestry. We further show that reanalysing a small sample of
+published datasets using the best performing methods from our simulations can 
+appreciably change parameter estimates.
+
+In a Matters Arising, Akaliyski highlights potential issues with our study 
+design, distinguishes between different sources of confounding that can arise 
+from non-independence, and proposes causal models where controlling for 
+non-independence might actually bias, rather than help, inference. For these 
+reasons, Akaliyski argues that controlling for non-independence 
+should not be the default analytic choice in cross-national research.
+
+We appreciate this commentary on our work. It is useful to discuss these 
+methodological issues in more detail to improve the rigour of cross-national 
+research. That said, we feel that the commentary misinterprets our 
+argument in places and overstates potential concerns.
+
+It is worth clarifying from the outset that nowhere in the paper do we argue 
+that controlling for non-independence should be the default analytic choice 
+in cross-national analyses. Instead of proposing a one-size-fits-all 
+solution, we explicitly recommend that "individual studies must outline 
+their own particular causal assumptions, which... can then be used to design 
+tailored statistical estimation strategies"[@Claessens2023] (p. 8). If controls
+for non-independence are likely to bias inference, then they should not be 
+included. However, as we will see, we believe these scenarios to be much 
+rarer in the real world than Akaliyski claims.
+
+The commentary raises concerns with our particular non-independence controls, 
+our simulations, and our reanalyses. First, while it is interesting that 
+Akaliyski[@Akaliyski2017] finds a reduced effect of geographic and linguistic 
+distances in some regressions, our study and a large body of work 
+[@Currie2021;@Diamond1997;@Dow2008;@Gallup1999;@Guglielmino1995;@Kelly2020;
+@Kyritsis2022;@Matthews2016] shows that geography and language are important 
+explanatory factors for a range of cross-cultural variables. Second, in our 
+simulations we generated data with levels of spatial and cultural 
+non-independence that were comparable to the strength of non-independence 
+found in real-world datasets. We grant this does not prove that the controls 
+for non-independence will work in real-world scenarios, but such a proof 
+seems an impossibly high bar given that we can never know the true causal 
+model in the real world. Third, we acknowledge in the paper that our 
+reanalyses do not include all controls from the original studies, meaning
+that "we are unable to outright reject the claims from these studies"
+[@Claessens2023] (p. 9). Our more modest goal was to show that adding 
+controls for non-independence in a stepwise fashion can have an appreciable
+impact on reported relationships in real-world data.
+
+Table 1 in the commentary distinguishes between two sources of 
+confounding that can arise from non-independence: confounding via diffusion 
+(the eponymous Galton's Problem) and confounding via third variables. This 
+is a useful contribution, as in hindsight we did not clearly delineate these 
+two sources of confounding. In the former scenario, we must control for 
+non-independence to account for local and historical diffusion of outcome 
+and predictor variables. In the latter scenario, we would like to control 
+for confounds such as climate, physical topography, cultural norms, and 
+institutions. If these variables are unobserved, then, to the extent that
+they are autocorrelated in space or down cultural genealogies, we can 
+potentially use geographic and cultural phylogenetic distances to account 
+for their influence. Of course, if these third variables are observed, then 
+we should just include them directly: nowhere do we propose using controls 
+for non-independence as stand-ins for available direct measures. But if we 
+allow that unobserved confounds likely exist, then exploring the effect of
+including controls for non-independence seems prudent, at the very least.
+
+After defining different sources of confounding, Akaliyski proposes two 
+causal models where controlling for non-independence might actually bias 
+inference. Akaliyski's Models 4 and 5 illustrate scenarios where the predictor 
+variable (X) is non-independent, but the outcome variable (Y) is not. Under 
+such models, controlling for non-independence (Z) could either harm precision 
+or induce bias. Akaliyski argues that models like these may be more common 
+in reality than models where both variables are non-independent (Model 1) 
+because processes of diffusion are more likely to influence predictor 
+variables than outcome variables. If this is true, controls for 
+non-independence may harm inference more often than they will help.
+
+However, compared to Model 1, Models 4 and 5 make much stronger and more 
+unrealistic assumptions about the causal relationships between 
+national-level variables. These models assume that spatial proximity and 
+cultural ancestry influence the outcome variable solely through the 
+predictor variable (Z → X → Y) and not through any other causal paths. This 
+seems to us an unlikely scenario. It is very likely that outcome variables
+will also be affected by spatial proximity and cultural ancestry, either 
+directly or indirectly through their effects on unobserved variables.
+
+We can illustrate this by expanding Akaliyski's example of collectivism 
+predicting mask wearing, using generative simulations to inform our intuitions 
+(Figure \@ref(fig:plot)). If shared ancestry only influences mask 
+wearing through collectivism as a mediator, as Akaliyski claims, then 
+controlling for shared ancestry does slightly harm the precision of estimates
+(Model 4a in Figure \@ref(fig:plot)). But shared ancestry also likely 
+influences many other national-level variables that have been shown to be 
+related to COVID-19 preventative behaviours, including but not limited to 
+cultural tightness[@Gilliam2022], long-term orientation[@Ma2022], uncertainty
+avoidance[@Huang2023], religiosity[@Trepanowski2022], and trust in science
+and government[@Chen2022]. If we have relevant data on all of these variables, 
+then we can control for them directly, but if any are unobserved then it is 
+necessary to control for shared ancestry to reduce bias (Model 4b in Figure 
+\@ref(fig:plot)).
+
+(ref:plotCaption) Results of simulations testing the implications of controlling for non-independence under different generative causal models. In all simulations, the true causal effect of X on Y is 0. All other causal paths are set to 1. Z represents spatial or cultural phylogenetic non-independence. All other variables are standard normal variables. _N_ = 2000 in each simulated dataset. Densities show the posterior causal effect of X on Y from models fitted without controls for non-independence (red), with controls for non-independence (green), or with a control for non-independence included as an instrumental variable (blue). The IV control is only fitted to data generated from Model 5a, as Z only meets the criteria for an instrumental variable under this generative causal model.
+
+```{r plot, fig.width=6, fig.height=5, fig.cap="(ref:plotCaption)"}
+tar_read(plot)
+```
+
+Akaliyski then introduces an unobserved variable --- perceived pathogen threat 
+--- which influences both collectivism and mask wearing. Indeed, under this 
+generative model, controlling for shared ancestry results in bias 
+amplification[@Cinelli2022] (Model 5a in Figure \@ref(fig:plot)). 
+But again, this causal model is unrealistic. If we allow that perceived pathogen
+threat could be influenced by shared ancestry[@Bromham2018] and that shared 
+ancestry could influence mask wearing indirectly through any of the unobserved 
+variables listed above, then it is necessary to control for shared ancestry to 
+reduce bias (though bias still remains due to the unblocked backdoor path 
+X ← U~1~ → Y; Model 5b in Figure \@ref(fig:plot)).
+
+Even in situations where Models 4a or 5a do hold, we can still use controls for 
+non-independence to estimate unbiased causal effects. For example, in Model 5a,
+Z fits the criteria for an instrumental variable: Z is independent of unmeasured
+confounds and only influences Y through its effect on X[@McElreath2020]. In this 
+situation, including Z as an instrumental variable adjusts for unmeasured
+confounding, producing an unbiased estimate of the causal effect (Model 5a in 
+Figure \@ref(fig:plot)).
+
+In sum, while Akaliyski's commentary illustrates several theoretical cases 
+where controls for non-independence could hinder inferences, we contend that 
+such cases are likely to be rare in practice. This is because national-level 
+predictor and outcome variables (even contemporary variables) are likely to be 
+influenced by a host of factors that are spatially and culturally patterned. 
+Even in rare situations where such theoretical cases hold, controls for 
+non-independence can still be useful to include if implemented in a manner 
+consistent with the underlying causal assumptions (e.g., as instrumental 
+variables). Thus, we still think it critically important researchers consider
+that cross-national analyses require additional controls to account for the 
+non-independence of nations.
+
+\newpage
+\nolinenumbers
+
+# Code Availability
+
+All code to reproduce the simulations in this manuscript can be found on 
+GitHub: https://github.com/ScottClaessens/crossNationalCorrelationsReply
+
+# Acknowledgements
+
+This work was supported by a Royal Society of New Zealand Marsden grant 
+(20-UOA123) to QDA. We thank Erik Ringen for providing feedback on a previous
+version of the manuscript and for his valuable input on instrumental variables.
+
+# Author Contributions Statement
+
+SC and QDA wrote the original draft of the manuscript. SC ran the simulations 
+and created the figure. All authors reviewed and edited the final draft of the 
+manuscript.
+
+# Competing Interests Statement
+
+The authors declare no competing interests.
+
+\newpage
+
+# References
+
+\begingroup
+<div id="refs" custom-style="Bibliography"></div>
+\endgroup
