@@ -191,6 +191,11 @@ non-independence of nations.
 \newpage
 \nolinenumbers
 
+# Data Availability
+
+All simulated data in this manuscript can be reproduced using the code on 
+GitHub: https://github.com/ScottClaessens/crossNationalCorrelationsReply
+
 # Code Availability
 
 All code to reproduce the simulations in this manuscript can be found on 
