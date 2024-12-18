@@ -1,5 +1,5 @@
 ---
-title             : "Reply to: Controlling for non-independence of nations should NOT be the default choice in cross-cultural research"
+title             : "Reply to: Controlling for non-independence of nations should not be the default choice in cross-cultural research"
 shorttitle        : "Non-independence reply"
 
 author: 
@@ -58,12 +58,13 @@ shared cultural ancestry. We further show that reanalysing a small sample of
 published datasets using the best performing methods from our simulations can 
 appreciably change parameter estimates.
 
-In a Matters Arising, Akaliyski highlights potential issues with our study 
-design, distinguishes between different sources of confounding that can arise 
-from non-independence, and proposes causal models where controlling for 
-non-independence might actually bias, rather than help, inference. For these 
-reasons, Akaliyski argues that controlling for non-independence 
-should not be the default analytic choice in cross-national research.
+In a commentary on our paper, Akaliyski[@Akaliyski2024] highlights potential 
+issues with our study design, distinguishes between different sources of 
+confounding that can arise from non-independence, and proposes causal models 
+where controlling for non-independence might actually bias, rather than help, 
+inference. For these reasons, Akaliyski argues that controlling for 
+non-independence should not be the default analytic choice in cross-national
+research.
 
 We appreciate this commentary on our work. It is useful to discuss these 
 methodological issues in more detail to improve the rigour of cross-national 

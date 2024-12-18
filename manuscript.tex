@@ -138,13 +138,13 @@
   {\normalfont\normalsize\itshape\hspace{\parindent}{#1}\textit{\addperi}}{\relax}}
 \makeatother
 
-% \usepackage{etoolbox}
 \makeatletter
-\patchcmd{\HyOrg@maketitle}
+\usepackage{etoolbox}
+\patchcmd{\maketitle}
   {\section{\normalfont\normalsize\abstractname}}
   {\section*{\normalfont\normalsize\abstractname}}
   {}{\typeout{Failed to patch abstract.}}
-\patchcmd{\HyOrg@maketitle}
+\patchcmd{\maketitle}
   {\section{\protect\normalfont{\@title}}}
   {\section*{\protect\normalfont{\@title}}}
   {}{\typeout{Failed to patch title.}}
@@ -154,10 +154,11 @@
 \makeatletter
 \xapptocmd\appendix
   {\xapptocmd\section
-    {\addcontentsline{toc}{section}{\appendixname\ifoneappendix\else~\theappendix\fi\\: #1}}
+    {\addcontentsline{toc}{section}{\appendixname\ifoneappendix\else~\theappendix\fi: #1}}
     {}{\InnerPatchFailed}%
   }
 {}{\PatchFailed}
+\makeatother
 \usepackage{lineno}
 
 \linenumbers
@@ -177,13 +178,13 @@
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \urlstyle{same}
 \hypersetup{
-  pdftitle={Reply to: Controlling for non-independence of nations should NOT be the default choice in cross-cultural research},
+  pdftitle={Reply to: Controlling for non-independence of nations should not be the default choice in cross-cultural research},
   pdfauthor={Scott Claessens1*, Thanos Kyritsis1, \& Quentin D. Atkinson1,2*},
   pdflang={en-EN},
   hidelinks,
   pdfcreator={LaTeX via pandoc}}
 
-\title{Reply to: Controlling for non-independence of nations should NOT be the default choice in cross-cultural research}
+\title{Reply to: Controlling for non-independence of nations should not be the default choice in cross-cultural research}
 \author{Scott Claessens\textsuperscript{1*}, Thanos Kyritsis\textsuperscript{1}, \& Quentin D. Atkinson\textsuperscript{1,2*}}
 \date{}
 
@@ -208,12 +209,13 @@ shared cultural ancestry. We further show that reanalysing a small sample of
 published datasets using the best performing methods from our simulations can
 appreciably change parameter estimates.
 
-In a Matters Arising, Akaliyski highlights potential issues with our study
-design, distinguishes between different sources of confounding that can arise
-from non-independence, and proposes causal models where controlling for
-non-independence might actually bias, rather than help, inference. For these
-reasons, Akaliyski argues that controlling for non-independence
-should not be the default analytic choice in cross-national research.
+In a commentary on our paper, Akaliyski\textsuperscript{2} highlights potential
+issues with our study design, distinguishes between different sources of
+confounding that can arise from non-independence, and proposes causal models
+where controlling for non-independence might actually bias, rather than help,
+inference. For these reasons, Akaliyski argues that controlling for
+non-independence should not be the default analytic choice in cross-national
+research.
 
 We appreciate this commentary on our work. It is useful to discuss these
 methodological issues in more detail to improve the rigour of cross-national
@@ -232,8 +234,8 @@ rarer in the real world than Akaliyski claims.
 
 The commentary raises concerns with our particular non-independence controls,
 our simulations, and our reanalyses. First, while it is interesting that
-Akaliyski\textsuperscript{2} finds a reduced effect of geographic and linguistic
-distances in some regressions, our study and a large body of work\textsuperscript{3--10} shows that geography and language are important
+Akaliyski\textsuperscript{3} finds a reduced effect of geographic and linguistic
+distances in some regressions, our study and a large body of work\textsuperscript{4--11} shows that geography and language are important
 explanatory factors for a range of cross-cultural variables. Second, in our
 simulations we generated data with levels of spatial and cultural
 non-independence that were comparable to the strength of non-independence
@@ -291,9 +293,9 @@ controlling for shared ancestry does slightly harm the precision of estimates
 (Model 4a in Figure \ref{fig:plot}). But shared ancestry also likely
 influences many other national-level variables that have been shown to be
 related to COVID-19 preventative behaviours, including but not limited to
-cultural tightness\textsuperscript{11}, long-term orientation\textsuperscript{12}, uncertainty
-avoidance\textsuperscript{13}, religiosity\textsuperscript{14}, and trust in science
-and government\textsuperscript{15}. If we have relevant data on all of these variables,
+cultural tightness\textsuperscript{12}, long-term orientation\textsuperscript{13}, uncertainty
+avoidance\textsuperscript{14}, religiosity\textsuperscript{15}, and trust in science
+and government\textsuperscript{16}. If we have relevant data on all of these variables,
 then we can control for them directly, but if any are unobserved then it is
 necessary to control for shared ancestry to reduce bias (Model 4b in Figure
 \ref{fig:plot}).
@@ -309,9 +311,9 @@ necessary to control for shared ancestry to reduce bias (Model 4b in Figure
 Akaliyski then introduces an unobserved variable --- perceived pathogen threat
 --- which influences both collectivism and mask wearing. Indeed, under this
 generative model, controlling for shared ancestry results in bias
-amplification\textsuperscript{16} (Model 5a in Figure \ref{fig:plot}).
+amplification\textsuperscript{17} (Model 5a in Figure \ref{fig:plot}).
 But again, this causal model is unrealistic. If we allow that perceived pathogen
-threat could be influenced by shared ancestry\textsuperscript{17} and that shared
+threat could be influenced by shared ancestry\textsuperscript{18} and that shared
 ancestry could influence mask wearing indirectly through any of the unobserved
 variables listed above, then it is necessary to control for shared ancestry to
 reduce bias (though bias still remains due to the unblocked backdoor path
@@ -320,7 +322,7 @@ X ← U\textsubscript{1} → Y; Model 5b in Figure \ref{fig:plot}).
 Even in situations where Models 4a or 5a do hold, we can still use controls for
 non-independence to estimate unbiased causal effects. For example, in Model 5a,
 Z fits the criteria for an instrumental variable: Z is independent of unmeasured
-confounds and only influences Y through its effect on X\textsuperscript{18}. In this
+confounds and only influences Y through its effect on X\textsuperscript{19}. In this
 situation, including Z as an instrumental variable adjusts for unmeasured
 confounding, producing an unbiased estimate of the causal effect (Model 5a in
 Figure \ref{fig:plot}).
@@ -384,72 +386,76 @@ The authors declare no competing interests.
 \CSLLeftMargin{1. }%
 \CSLRightInline{Claessens, S., Kyritsis, T. \& Atkinson, Q. D. \href{https://doi.org/10.1038/s41467-023-41486-1}{Cross-national analyses require additional controls to account for the non-independence of nations}. \emph{Nature Communications} \textbf{14}, 5776 (2023).}
 
-\leavevmode\vadjust pre{\hypertarget{ref-Akaliyski2017}{}}%
+\leavevmode\vadjust pre{\hypertarget{ref-Akaliyski2024}{}}%
 \CSLLeftMargin{2. }%
+\CSLRightInline{Akaliyski, P. Controlling for non-independence of nations should not be the default choice in crosscultural research: Response to {Claessens} et al. (2023). \emph{SSRN} (2024) doi:\href{https://doi.org/10.2139/ssrn.5014193}{10.2139/ssrn.5014193}.}
+
+\leavevmode\vadjust pre{\hypertarget{ref-Akaliyski2017}{}}%
+\CSLLeftMargin{3. }%
 \CSLRightInline{Akaliyski, P. \href{https://doi.org/10.1163/15691330-12341432}{Sources of societal value similarities across {Europe}: Evidence from dyadic models}. \emph{Comparative Sociology} \textbf{16}, 447--470 (2017).}
 
 \leavevmode\vadjust pre{\hypertarget{ref-Currie2021}{}}%
-\CSLLeftMargin{3. }%
+\CSLLeftMargin{4. }%
 \CSLRightInline{Currie, T. E. \emph{et al.} \href{https://doi.org/10.1098/rstb.2020.0047}{The cultural evolution and ecology of institutions}. \emph{Philosophical Transactions of the Royal Society B: Biological Sciences} \textbf{376}, 20200047 (2021).}
 
 \leavevmode\vadjust pre{\hypertarget{ref-Diamond1997}{}}%
-\CSLLeftMargin{4. }%
+\CSLLeftMargin{5. }%
 \CSLRightInline{Diamond, J. M. \emph{Guns, germs, and steel: The fates of human societies}. (W. W. Norton \& Co., 1997).}
 
 \leavevmode\vadjust pre{\hypertarget{ref-Dow2008}{}}%
-\CSLLeftMargin{5. }%
+\CSLLeftMargin{6. }%
 \CSLRightInline{Dow, M. M. \& Eff, E. A. \href{https://doi.org/10.1177/1069397107311186}{Global, regional, and local network autocorrelation in the {Standard Cross-Cultural Sample}}. \emph{Cross-Cultural Research} \textbf{42}, 148--171 (2008).}
 
 \leavevmode\vadjust pre{\hypertarget{ref-Gallup1999}{}}%
-\CSLLeftMargin{6. }%
+\CSLLeftMargin{7. }%
 \CSLRightInline{Gallup, J. L., Sachs, J. D. \& Mellinger, A. D. \href{https://doi.org/10.1177/016001799761012334}{Geography and economic development}. \emph{International Regional Science Review} \textbf{22}, 179--232 (1999).}
 
 \leavevmode\vadjust pre{\hypertarget{ref-Guglielmino1995}{}}%
-\CSLLeftMargin{7. }%
+\CSLLeftMargin{8. }%
 \CSLRightInline{Guglielmino, C. R., Viganotti, C., Hewlett, B. \& Cavalli-Sforza, L. L. \href{https://doi.org/10.1073/pnas.92.16.7585}{Cultural variation in {Africa}: Role of mechanisms of transmission and adaptation}. \emph{Proceedings of the National Academy of Sciences} \textbf{92}, 7585--7589 (1995).}
 
 \leavevmode\vadjust pre{\hypertarget{ref-Kelly2020}{}}%
-\CSLLeftMargin{8. }%
+\CSLLeftMargin{9. }%
 \CSLRightInline{Kelly, M. \href{http://ssrn.com/abstract=3688200}{Understanding persistence}. \emph{CEPR Discussion Paper No. DP15246} (2020).}
 
 \leavevmode\vadjust pre{\hypertarget{ref-Kyritsis2022}{}}%
-\CSLLeftMargin{9. }%
+\CSLLeftMargin{10. }%
 \CSLRightInline{Kyritsis, T., Matthews, L. J., Welch, D. \& Atkinson, Q. D. \href{https://doi.org/10.1017/ehs.2022.40}{Shared cultural ancestry predicts the global diffusion of democracy}. \emph{Evolutionary Human Sciences} \textbf{4}, e42 (2022).}
 
 \leavevmode\vadjust pre{\hypertarget{ref-Matthews2016}{}}%
-\CSLLeftMargin{10. }%
+\CSLLeftMargin{11. }%
 \CSLRightInline{Matthews, L. J., Passmore, S., Richard, P. M., Gray, R. D. \& Atkinson, Q. D. \href{https://doi.org/10.1371/journal.pone.0152979}{Shared cultural history as a predictor of political and economic changes among nation states}. \emph{PLOS ONE} \textbf{11}, 1--18 (2016).}
 
 \leavevmode\vadjust pre{\hypertarget{ref-Gilliam2022}{}}%
-\CSLLeftMargin{11. }%
+\CSLLeftMargin{12. }%
 \CSLRightInline{Gilliam, A., Schwartz, D. B., Godoy, R., Boduroglu, A. \& Gutchess, A. \href{https://doi.org/10.1177/00220221221077710}{Does state tightness-looseness predict behavior and attitudes early in the {COVID-19} pandemic in the USA?} \emph{Journal of Cross-Cultural Psychology} \textbf{53}, 522--542 (2022).}
 
 \leavevmode\vadjust pre{\hypertarget{ref-Ma2022}{}}%
-\CSLLeftMargin{12. }%
+\CSLLeftMargin{13. }%
 \CSLRightInline{Ma, J.-T. \emph{et al.} \href{https://doi.org/10.1016/j.paid.2022.111589}{Long-term orientation and demographics predict the willingness to quarantine: A cross-national survey in the first round of {COVID-19} lockdown}. \emph{Personality and Individual Differences} \textbf{192}, 111589 (2022).}
 
 \leavevmode\vadjust pre{\hypertarget{ref-Huang2023}{}}%
-\CSLLeftMargin{13. }%
+\CSLLeftMargin{14. }%
 \CSLRightInline{Huang, X. \emph{et al.} \href{https://doi.org/10.1177/10693971221141478}{How national culture influences the speed of {COVID-19} spread: Three cross-cultural studies}. \emph{Cross-Cultural Research} \textbf{57}, 193--238 (2023).}
 
 \leavevmode\vadjust pre{\hypertarget{ref-Trepanowski2022}{}}%
-\CSLLeftMargin{14. }%
+\CSLLeftMargin{15. }%
 \CSLRightInline{Trepanowski, R. \& Drążkowski, D. \href{https://doi.org/10.1007/s10943-022-01569-7}{Cross-national comparison of religion as a predictor of {COVID-19} vaccination rates}. \emph{Journal of Religion and Health} \textbf{61}, 2198--2211 (2022).}
 
 \leavevmode\vadjust pre{\hypertarget{ref-Chen2022}{}}%
-\CSLLeftMargin{15. }%
+\CSLLeftMargin{16. }%
 \CSLRightInline{Chen, R., Fwu, B.-J., Yang, T.-R., Chen, Y.-K. \& Tran, Q.-A. N. \href{https://doi.org/10.1371/journal.pone.0270160}{To mask or not to mask: Debunking the myths of mask-wearing during {COVID-19} across cultures}. \emph{PLOS ONE} \textbf{17}, 1--17 (2022).}
 
 \leavevmode\vadjust pre{\hypertarget{ref-Cinelli2022}{}}%
-\CSLLeftMargin{16. }%
+\CSLLeftMargin{17. }%
 \CSLRightInline{Cinelli, C., Forney, A. \& Pearl, J. A crash course in good and bad controls. \emph{Sociological Methods \& Research} 00491241221099552 (2022) doi:\href{https://doi.org/10.1177/00491241221099552}{10.1177/00491241221099552}.}
 
 \leavevmode\vadjust pre{\hypertarget{ref-Bromham2018}{}}%
-\CSLLeftMargin{17. }%
+\CSLLeftMargin{18. }%
 \CSLRightInline{Bromham, L., Hua, X., Cardillo, M., Schneemann, H. \& Greenhill, S. J. \href{https://doi.org/10.1098/rsos.181100}{Parasites and politics: Why cross-cultural studies must control for relatedness, proximity and covariation}. \emph{Royal Society Open Science} \textbf{5}, 181100 (2018).}
 
 \leavevmode\vadjust pre{\hypertarget{ref-McElreath2020}{}}%
-\CSLLeftMargin{18. }%
+\CSLLeftMargin{19. }%
 \CSLRightInline{McElreath, R. \emph{Statistical rethinking: A {B}ayesian course with examples in {R} and {Stan}}. (CRC Press, 2020).}
 
 \end{CSLReferences}

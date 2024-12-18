@@ -56,9 +56,9 @@ plotResults <- function(modelList) {
       axis.ticks.y = element_blank(),
       axis.text.y = element_blank(),
       strip.background = element_blank(),
-      strip.text = element_markdown(size = 18, padding = unit(c(0, 0, -0.3, 0), "cm")),
+      strip.text = element_markdown(size = 18, padding = unit(c(0, 0, -0.2, 0), "cm")),
       legend.title = element_blank(),
-      legend.spacing.y = unit(4, 'mm'),
+      legend.key.spacing.y = unit(5, 'mm'),
       legend.position = c(1.25, 0.6),
       plot.margin = margin(0, 4.75, 0.1, 0, "cm"),
       panel.spacing = unit(2, "lines")
